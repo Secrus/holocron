@@ -16,4 +16,7 @@ dependencies = [
     "fastapi-cli[standard-no-fastapi-cloud-cli] >= 0.0.8",
 ]
 
-
+[dependency-groups]
+dev = [
+    "prek>=0.3.3",
+]
