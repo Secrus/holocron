@@ -20,3 +20,38 @@ dependencies = [
 dev = [
     "prek>=0.3.3",
 ]
+
+
+[tool.ruff]
+fix = true
+line-length = 88
+
+[tool.ruff.lint]
+extend-select = [
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "ERA", # flake8-eradicate/eradicate
+    "I",   # isort
+    "N",   # pep8-naming
+    "PIE", # flake8-pie
+    "PGH", # pygrep
+    "RUF", # ruff checks
+    "SIM", # flake8-simplify
+    "T20", # flake8-print
+    "TC",  # flake8-type-checking
+    "TID", # flake8-tidy-imports
+    "UP",  # pyupgrade
+]
+extend-safe-fixes = [
+    "TC",  # move import from and to TYPE_CHECKING blocks
+]
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[tool.ruff.lint.isort]
+force-single-line = true
+lines-between-types = 1
+lines-after-imports = 2
+known-first-party = ["holocron"]
+required-imports = ["from __future__ import annotations"]
