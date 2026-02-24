@@ -18,6 +18,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "mypy>=1.19.1",
     "prek>=0.3.3",
 ]
 
@@ -55,3 +56,16 @@ lines-between-types = 1
 lines-after-imports = 2
 known-first-party = ["holocron"]
 required-imports = ["from __future__ import annotations"]
+
+
+[tool.mypy]
+files = "src, tests"
+mypy_path = "src"
+namespace_packages = true
+explicit_package_bases = true
+strict = true
+enable_error_code = [
+    "ignore-without-code",
+    "redundant-expr",
+    "truthy-bool",
+]
